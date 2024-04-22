@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pryAguirreNave4", "pryAguirreNave4.csproj", "{BE1A96C4-B1A9-442C-9A1F-F14C07D239BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE1A96C4-B1A9-442C-9A1F-F14C07D239BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1A96C4-B1A9-442C-9A1F-F14C07D239BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1A96C4-B1A9-442C-9A1F-F14C07D239BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1A96C4-B1A9-442C-9A1F-F14C07D239BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C934FC2-CBD4-4B41-A4BA-3BC14C83C2A0}
+	EndGlobalSection
+EndGlobal
