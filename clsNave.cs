@@ -16,12 +16,12 @@ namespace pryAguirreNave4
         private readonly PictureBox Alien;
         private readonly PictureBox Alien2;
         private readonly PictureBox Alien3;
-        private readonly Label lblPuntaje;
+        private readonly System.Windows.Forms.Label lblPuntaje;
         private readonly Form frmJuego;
         private readonly PictureBox pctNave;
         private readonly Timer timer1;
 
-        public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, Label lblPuntaje, Form frmJuego, Timer timer1)
+        public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, Form frmJuego, Timer timer1)
         {
             this.Alien = Alien;
             this.Alien2 = Alien2;
