@@ -20,6 +20,8 @@ namespace pryAguirreNave4
         private readonly Form frmJuego;
         private readonly PictureBox pctNave;
         private readonly Timer timer1;
+        private Point UltimaPosicion;
+
 
         public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, Form frmJuego, Timer timer1)
         {
@@ -127,13 +129,12 @@ namespace pryAguirreNave4
                                 //frmJuego.Controls.Remove(Alien);
                                 Alien.Visible = false;
                                 
-                                //i.Top = -100;
-                                ((PictureBox)Laser).Image = Properties.Resources.explosion;
+                                UltimaPosicion = Alien.Location;
 
                                 Puntos++;
                                 lblPuntaje.Text = Puntos.ToString();
                                 frmJuego.Controls.Remove(Laser);
-
+                                Colision();
                             }
                         }
                     }
@@ -141,6 +142,28 @@ namespace pryAguirreNave4
             }
         }
         public void Colision()
+        {
+
+            PictureBox Explosion = new PictureBox();
+            Explosion.SizeMode = PictureBoxSizeMode.StretchImage;
+            Explosion.Size = new Size(84, 38);
+            Explosion.Image = Properties.Resources.explosion;
+            Explosion.Location = UltimaPosicion;
+            frmJuego.Controls.Add(Explosion);
+            Explosion.BringToFront();
+            Explosion.Name = "explosion";
+
+            Timer timer = new Timer();
+            timer.Interval = 500;
+            timer.Tick += (sender, arges) =>
+            {
+                frmJuego.Controls.Remove(Explosion);
+                Explosion.Dispose();
+                timer.Stop();
+            };
+            timer.Start();
+        }
+        public void Perder()
         {
             foreach (Control Nave in frmJuego.Controls)
             {
@@ -152,8 +175,8 @@ namespace pryAguirreNave4
                         {
                             if (Nave.Bounds.IntersectsWith(Alien.Bounds))
                             {
-
-
+                                
+                                
                             }
                         }
                     }

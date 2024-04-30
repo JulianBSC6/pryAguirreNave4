@@ -94,6 +94,7 @@ namespace pryAguirreNave4
         {
             Nave.timer1_Tick(sender, e);
             
+            
         }
     }
 }

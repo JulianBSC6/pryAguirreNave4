@@ -29,62 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pctNave = new System.Windows.Forms.PictureBox();
-            this.Alien = new System.Windows.Forms.PictureBox();
-            this.Alien2 = new System.Windows.Forms.PictureBox();
-            this.Alien3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPuntaje = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pctNave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Alien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Alien2)).BeginInit();
+            this.Alien3 = new System.Windows.Forms.PictureBox();
+            this.Alien2 = new System.Windows.Forms.PictureBox();
+            this.Alien = new System.Windows.Forms.PictureBox();
+            this.pctNave = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Alien3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Alien2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Alien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctNave)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pctNave
-            // 
-            this.pctNave.Image = global::pryAguirreNave4.Properties.Resources.pngwing_com;
-            this.pctNave.Location = new System.Drawing.Point(323, 460);
-            this.pctNave.Name = "pctNave";
-            this.pctNave.Size = new System.Drawing.Size(86, 64);
-            this.pctNave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctNave.TabIndex = 0;
-            this.pctNave.TabStop = false;
-            this.pctNave.Tag = "Nave";
-            // 
-            // Alien
-            // 
-            this.Alien.Image = global::pryAguirreNave4.Properties.Resources.alien;
-            this.Alien.Location = new System.Drawing.Point(86, 34);
-            this.Alien.Name = "Alien";
-            this.Alien.Size = new System.Drawing.Size(84, 38);
-            this.Alien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Alien.TabIndex = 1;
-            this.Alien.TabStop = false;
-            this.Alien.Tag = "Alien";
-            // 
-            // Alien2
-            // 
-            this.Alien2.Image = global::pryAguirreNave4.Properties.Resources.alien2;
-            this.Alien2.Location = new System.Drawing.Point(297, 34);
-            this.Alien2.Name = "Alien2";
-            this.Alien2.Size = new System.Drawing.Size(90, 51);
-            this.Alien2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Alien2.TabIndex = 2;
-            this.Alien2.TabStop = false;
-            this.Alien2.Tag = "Alien";
-            // 
-            // Alien3
-            // 
-            this.Alien3.Image = global::pryAguirreNave4.Properties.Resources.alien3;
-            this.Alien3.Location = new System.Drawing.Point(469, 34);
-            this.Alien3.Name = "Alien3";
-            this.Alien3.Size = new System.Drawing.Size(126, 82);
-            this.Alien3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Alien3.TabIndex = 3;
-            this.Alien3.TabStop = false;
-            this.Alien3.Tag = "Alien";
             // 
             // label1
             // 
@@ -110,7 +66,52 @@
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Interval = 70;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Alien3
+            // 
+            this.Alien3.Image = global::pryAguirreNave4.Properties.Resources.alien3;
+            this.Alien3.Location = new System.Drawing.Point(469, 34);
+            this.Alien3.Name = "Alien3";
+            this.Alien3.Size = new System.Drawing.Size(126, 82);
+            this.Alien3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Alien3.TabIndex = 3;
+            this.Alien3.TabStop = false;
+            this.Alien3.Tag = "Alien";
+            // 
+            // Alien2
+            // 
+            this.Alien2.Image = global::pryAguirreNave4.Properties.Resources.alien2;
+            this.Alien2.Location = new System.Drawing.Point(297, 34);
+            this.Alien2.Name = "Alien2";
+            this.Alien2.Size = new System.Drawing.Size(90, 51);
+            this.Alien2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Alien2.TabIndex = 2;
+            this.Alien2.TabStop = false;
+            this.Alien2.Tag = "Alien";
+            // 
+            // Alien
+            // 
+            this.Alien.Image = global::pryAguirreNave4.Properties.Resources.alien;
+            this.Alien.Location = new System.Drawing.Point(86, 34);
+            this.Alien.Name = "Alien";
+            this.Alien.Size = new System.Drawing.Size(84, 38);
+            this.Alien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Alien.TabIndex = 1;
+            this.Alien.TabStop = false;
+            this.Alien.Tag = "Alien";
+            // 
+            // pctNave
+            // 
+            this.pctNave.Image = global::pryAguirreNave4.Properties.Resources.pngwing_com;
+            this.pctNave.Location = new System.Drawing.Point(323, 460);
+            this.pctNave.Name = "pctNave";
+            this.pctNave.Size = new System.Drawing.Size(86, 64);
+            this.pctNave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctNave.TabIndex = 0;
+            this.pctNave.TabStop = false;
+            this.pctNave.Tag = "Nave";
             // 
             // frmJuego
             // 
@@ -129,10 +130,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Juego Galaga";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmJuego_KeyPress);
-            ((System.ComponentModel.ISupportInitialize)(this.pctNave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Alien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Alien2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Alien3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Alien2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Alien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctNave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
