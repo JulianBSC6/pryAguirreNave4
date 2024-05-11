@@ -66,7 +66,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 70;
+            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Alien3
@@ -129,6 +129,7 @@
             this.Name = "frmJuego";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Juego Galaga";
+            this.Load += new System.EventHandler(this.frmJuego_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmJuego_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.Alien3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Alien2)).EndInit();

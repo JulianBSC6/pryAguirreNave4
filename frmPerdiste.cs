@@ -16,5 +16,33 @@ namespace pryAguirreNave4
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmJuego))
+                {
+                    form.Close();
+                    break; // Termina el bucle una vez que se cierra el formulario
+                }
+            }
+            frmPrincipal principal = new frmPrincipal();
+            principal.Show();
+        }
+        clsNave puntos;
+        private void frmPerdiste_Load(object sender, EventArgs e)
+        {
+            if(puntos == null)
+            {
+                lblPuntajeFinal.Text = "0";
+            }
+            else
+            {
+                lblPuntajeFinal.Text = puntos.Puntos.ToString();
+            }
+            
+        }
     }
 }

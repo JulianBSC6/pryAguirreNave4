@@ -12,7 +12,7 @@ namespace pryAguirreNave4
 {
     internal class clsNave
     {
-        Int32 Puntos;
+        public Int32 Puntos;
         private readonly PictureBox Alien;
         private readonly PictureBox Alien2;
         private readonly PictureBox Alien3;
@@ -21,7 +21,7 @@ namespace pryAguirreNave4
         private readonly PictureBox pctNave;
         private readonly Timer timer1;
         private Point UltimaPosicion;
-
+        
 
         public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, Form frmJuego, Timer timer1)
         {
@@ -33,10 +33,15 @@ namespace pryAguirreNave4
             this.timer1 = timer1;
             this.pctNave = pctNave;
             Puntos = 0;
+            
+            timer1.Interval = 1;
+            timer1.Start();
+            
         }
         
         public void Enemigo()
         {
+            
             Random random = new Random();
             Random random2 = new Random();
             Random random3 = new Random();
@@ -49,7 +54,7 @@ namespace pryAguirreNave4
                     }
                     else
                     {
-                        Alien.Top += 15;
+                        Alien.Top += 3;
                     }
                     if (Alien2.Top >= 500|| Alien2.Visible==false)
                     {
@@ -59,7 +64,7 @@ namespace pryAguirreNave4
                     }
                     else
                     {
-                        Alien2.Top += 20;
+                        Alien2.Top += 3;
                     }
                     if (Alien3.Top >= 500|| Alien3.Visible==false)
                     {
@@ -69,23 +74,45 @@ namespace pryAguirreNave4
                     }
                     else
                     {
-                        Alien3.Top += 18;
+                        Alien3.Top += 2;
                     }
             
         }
 
         public void Municion()
         {
-            PictureBox Municion = new PictureBox();
-            Municion.SizeMode = PictureBoxSizeMode.StretchImage;
-            Municion.Size = new Size(40, 40);
-            Municion.Image = Properties.Resources.laser;
-            Municion.Tag = "Laser";
-            Municion.Left = pctNave.Left + 15;
-            Municion.Top = pctNave.Top - 30;
-            frmJuego.Controls.Add(Municion);
-            Municion.BringToFront();
+            
+            if (Puntos > 10)
+            {
+                
+                PictureBox Municion2 = new PictureBox();
+                Municion2.SizeMode = PictureBoxSizeMode.StretchImage;
+                Municion2.Size = new Size(20, 30);
+                Municion2.Image = Properties.Resources.laser;
+                Municion2.Tag = "Laser";
+                Municion2.Left = pctNave.Left + 60;
+                Municion2.Top = pctNave.Top - 30;
+                frmJuego.Controls.Add(Municion2);
+                Municion2.BringToFront();
+            }
+            
+                PictureBox Municion = new PictureBox();
+                Municion.SizeMode = PictureBoxSizeMode.StretchImage;
+                Municion.Size = new Size(20, 30);
+                Municion.Image = Properties.Resources.laser;
+                Municion.Tag = "Laser";
+                Municion.Left = pctNave.Left + 15;
+                Municion.Top = pctNave.Top - 30;
+                frmJuego.Controls.Add(Municion);
+                Municion.BringToFront();
+            
+            
         }
+        public void Municion2()
+        {
+           //no se usa
+        }
+
         public void CrearAliens()
         {
             PictureBox Alien = new PictureBox();
@@ -105,7 +132,7 @@ namespace pryAguirreNave4
             {
                 if (x is PictureBox && x.Tag == "Laser")
                 {
-                    x.Top -= 60;
+                    x.Top -= 20;
                     if (x.Top < 60)
                     {
                         frmJuego.Controls.Remove(x);
@@ -129,7 +156,7 @@ namespace pryAguirreNave4
                                 //frmJuego.Controls.Remove(Alien);
                                 Alien.Visible = false;
                                 
-                                UltimaPosicion = Alien.Location;
+                                UltimaPosicion = Laser.Location;
 
                                 Puntos++;
                                 lblPuntaje.Text = Puntos.ToString();
@@ -146,7 +173,7 @@ namespace pryAguirreNave4
 
             PictureBox Explosion = new PictureBox();
             Explosion.SizeMode = PictureBoxSizeMode.StretchImage;
-            Explosion.Size = new Size(84, 38);
+            Explosion.Size = new Size(30, 30);
             Explosion.Image = Properties.Resources.explosion;
             Explosion.Location = UltimaPosicion;
             frmJuego.Controls.Add(Explosion);
@@ -175,8 +202,9 @@ namespace pryAguirreNave4
                         {
                             if (Nave.Bounds.IntersectsWith(Alien.Bounds))
                             {
-                                
-                                
+                                frmPerdiste perder = new frmPerdiste();
+                                perder.Show();
+                                timer1.Stop();
                             }
                         }
                     }
@@ -185,23 +213,25 @@ namespace pryAguirreNave4
         }
         public void frmJuego_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             int x = pctNave.Location.X;
             int y = pctNave.Location.Y;
-            if (e.KeyChar == 'a') x -= 10;
-            if (e.KeyChar == 'd') x += 10;
+            if (e.KeyChar == 'a') x -= 15;
+            if (e.KeyChar == 'd') x += 15;
             if (e.KeyChar == 'w') Municion();
             if (x >= 850) x = 0;
             if (x <= -20) x = 800;
             Point punto = new Point(x, y);
             pctNave.Location = punto;
         }
+       
 
         public void timer1_Tick(object sender, EventArgs e)
         {
             Enemigo();
             Puntaje();
             Movimiento();
-            
+            Perder();
         }
     }
 }

@@ -96,5 +96,10 @@ namespace pryAguirreNave4
             
             
         }
+
+        private void frmJuego_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
