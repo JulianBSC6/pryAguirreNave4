@@ -20,7 +20,14 @@ namespace pryAguirreNave4
         private void juegoGalagaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmJuego pasar = new frmJuego();    
+            frmJugador pasar = new frmJugador();    
+            pasar.Show();
+        }
+
+        private void firmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmFirma pasar = new frmFirma();
             pasar.Show();
         }
     }

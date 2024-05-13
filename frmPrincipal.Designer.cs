@@ -53,6 +53,7 @@
             this.firmaToolStripMenuItem.Name = "firmaToolStripMenuItem";
             this.firmaToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.firmaToolStripMenuItem.Text = "Firma";
+            this.firmaToolStripMenuItem.Click += new System.EventHandler(this.firmaToolStripMenuItem_Click);
             // 
             // juegoGalagaToolStripMenuItem
             // 

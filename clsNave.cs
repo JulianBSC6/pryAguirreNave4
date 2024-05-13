@@ -22,6 +22,7 @@ namespace pryAguirreNave4
         private readonly Timer timer1;
         private Point UltimaPosicion;
         
+        
 
         public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, Form frmJuego, Timer timer1)
         {
@@ -41,42 +42,77 @@ namespace pryAguirreNave4
         
         public void Enemigo()
         {
-            
             Random random = new Random();
             Random random2 = new Random();
             Random random3 = new Random();
-            
-                    if (Alien.Top >= 500 || Alien.Visible == false)
-                    {
-                        int x = random.Next(0, 800);
-                        Alien.Location = new Point(x, 0);
-                        Alien.Visible= true;
-                    }
-                    else
-                    {
-                        Alien.Top += 3;
-                    }
-                    if (Alien2.Top >= 500|| Alien2.Visible==false)
-                    {
-                        int y = random2.Next(0, 800);
-                        Alien2.Location = new Point(y, 0);
-                        Alien2.Visible= true;
-                    }
-                    else
-                    {
-                        Alien2.Top += 3;
-                    }
-                    if (Alien3.Top >= 500|| Alien3.Visible==false)
-                    {
-                        int z = random3.Next(0, 800);
-                        Alien3.Location = new Point(z, 0);
-                        Alien3.Visible= true;
-                    }
-                    else
-                    {
-                        Alien3.Top += 2;
-                    }
-            
+            if (Puntos < 10)
+            {
+                
+
+                if (Alien.Top >= 500 || Alien.Visible == false)
+                {
+                    int x = random.Next(0, 800);
+                    Alien.Location = new Point(x, 0);
+                    Alien.Visible = true;
+                }
+                else
+                {
+                    Alien.Top += 3;
+                }
+                if (Alien2.Top >= 500 || Alien2.Visible == false)
+                {
+                    int y = random2.Next(0, 800);
+                    Alien2.Location = new Point(y, 0);
+                    Alien2.Visible = true;
+                }
+                else
+                {
+                    Alien2.Top += 3;
+                }
+                if (Alien3.Top >= 500 || Alien3.Visible == false)
+                {
+                    int z = random3.Next(0, 800);
+                    Alien3.Location = new Point(z, 0);
+                    Alien3.Visible = true;
+                }
+                else
+                {
+                    Alien3.Top += 2;
+                }
+            }
+            else
+            {
+                if (Alien.Top >= 500 || Alien.Visible == false)
+                {
+                    int x = random.Next(0, 800);
+                    Alien.Location = new Point(x, 0);
+                    Alien.Visible = true;
+                }
+                else
+                {
+                    Alien.Top += 5;
+                }
+                if (Alien2.Top >= 500 || Alien2.Visible == false)
+                {
+                    int y = random2.Next(0, 800);
+                    Alien2.Location = new Point(y, 0);
+                    Alien2.Visible = true;
+                }
+                else
+                {
+                    Alien2.Top += 5;
+                }
+                if (Alien3.Top >= 500 || Alien3.Visible == false)
+                {
+                    int z = random3.Next(0, 800);
+                    Alien3.Location = new Point(z, 0);
+                    Alien3.Visible = true;
+                }
+                else
+                {
+                    Alien3.Top += 4;
+                }
+            }
         }
 
         public void Municion()
@@ -162,6 +198,11 @@ namespace pryAguirreNave4
                                 lblPuntaje.Text = Puntos.ToString();
                                 frmJuego.Controls.Remove(Laser);
                                 Colision();
+
+                                frmPerdiste puntos = new frmPerdiste();
+                                puntos.lblPuntajeFinal.Text = Puntos.ToString();
+
+
                             }
                         }
                     }

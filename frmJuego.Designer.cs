@@ -147,7 +147,7 @@
         private System.Windows.Forms.PictureBox Alien2;
         private System.Windows.Forms.PictureBox Alien3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblPuntaje;
         private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Label lblPuntaje;
     }
 }
