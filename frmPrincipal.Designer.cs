@@ -32,6 +32,7 @@
             this.firmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juegoGalagaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblEstadoConexion = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,18 +75,31 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "LABORATORIO DE PROGRAMACION 3";
             // 
+            // lblEstadoConexion
+            // 
+            this.lblEstadoConexion.BackColor = System.Drawing.Color.Lime;
+            this.lblEstadoConexion.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoConexion.ForeColor = System.Drawing.Color.Red;
+            this.lblEstadoConexion.Location = new System.Drawing.Point(12, 408);
+            this.lblEstadoConexion.Name = "lblEstadoConexion";
+            this.lblEstadoConexion.Size = new System.Drawing.Size(140, 33);
+            this.lblEstadoConexion.TabIndex = 2;
+            this.lblEstadoConexion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblEstadoConexion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -99,6 +113,7 @@
         private System.Windows.Forms.ToolStripMenuItem firmaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juegoGalagaToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEstadoConexion;
     }
 }
 

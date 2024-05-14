@@ -16,12 +16,13 @@ namespace pryAguirreNave4
         {
             InitializeComponent();
         }
-
+        string Nombre;
         private void btnJugar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmJuego pasar = new frmJuego();
+            frmJuego pasar = new frmJuego(Nombre);
             pasar.Show();
+            
         }
     }
 }

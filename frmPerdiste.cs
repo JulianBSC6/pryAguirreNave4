@@ -13,11 +13,12 @@ namespace pryAguirreNave4
     public partial class frmPerdiste : Form
     {
         
+
         public frmPerdiste()
         {
             InitializeComponent();
-            
 
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,14 +35,14 @@ namespace pryAguirreNave4
             frmPrincipal principal = new frmPrincipal();
             principal.Show();
         }
+
         
 
         private void frmPerdiste_Load(object sender, EventArgs e)
         {
             
-            //lblPuntajeFinal.Text = Puntuacion.Puntos.ToString();
             
-            
+
         }
     }
 }

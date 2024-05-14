@@ -21,10 +21,11 @@ namespace pryAguirreNave4
         private readonly PictureBox pctNave;
         private readonly Timer timer1;
         private Point UltimaPosicion;
+        public string Nombre;
         
         
 
-        public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, Form frmJuego, Timer timer1)
+        public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, Form frmJuego, Timer timer1, String Name )
         {
             this.Alien = Alien;
             this.Alien2 = Alien2;
@@ -33,7 +34,7 @@ namespace pryAguirreNave4
             this.frmJuego = frmJuego;
             this.timer1 = timer1;
             this.pctNave = pctNave;
-            Puntos = 0;
+            this.Nombre = Name;
             
             timer1.Interval = 1;
             timer1.Start();
@@ -49,6 +50,39 @@ namespace pryAguirreNave4
             {
                 
 
+                if (Alien.Top >= 500 || Alien.Visible == false)
+                {
+                    int x = random.Next(0, 800);
+                    Alien.Location = new Point(x, 0);
+                    Alien.Visible = true;
+                }
+                else
+                {
+                    Alien.Top += 2;
+                }
+                if (Alien2.Top >= 500 || Alien2.Visible == false)
+                {
+                    int y = random2.Next(0, 800);
+                    Alien2.Location = new Point(y, 0);
+                    Alien2.Visible = true;
+                }
+                else
+                {
+                    Alien2.Top += 2;
+                }
+                if (Alien3.Top >= 500 || Alien3.Visible == false)
+                {
+                    int z = random3.Next(0, 800);
+                    Alien3.Location = new Point(z, 0);
+                    Alien3.Visible = true;
+                }
+                else
+                {
+                    Alien3.Top += 1;
+                }
+            }
+            else
+            {
                 if (Alien.Top >= 500 || Alien.Visible == false)
                 {
                     int x = random.Next(0, 800);
@@ -78,39 +112,6 @@ namespace pryAguirreNave4
                 else
                 {
                     Alien3.Top += 2;
-                }
-            }
-            else
-            {
-                if (Alien.Top >= 500 || Alien.Visible == false)
-                {
-                    int x = random.Next(0, 800);
-                    Alien.Location = new Point(x, 0);
-                    Alien.Visible = true;
-                }
-                else
-                {
-                    Alien.Top += 5;
-                }
-                if (Alien2.Top >= 500 || Alien2.Visible == false)
-                {
-                    int y = random2.Next(0, 800);
-                    Alien2.Location = new Point(y, 0);
-                    Alien2.Visible = true;
-                }
-                else
-                {
-                    Alien2.Top += 5;
-                }
-                if (Alien3.Top >= 500 || Alien3.Visible == false)
-                {
-                    int z = random3.Next(0, 800);
-                    Alien3.Location = new Point(z, 0);
-                    Alien3.Visible = true;
-                }
-                else
-                {
-                    Alien3.Top += 4;
                 }
             }
         }
@@ -176,7 +177,7 @@ namespace pryAguirreNave4
                 }
             }
         }
-
+        clsBD objDatos = new clsBD();
         public void Puntaje()
         {
             foreach (Control Laser in frmJuego.Controls)
@@ -198,9 +199,8 @@ namespace pryAguirreNave4
                                 lblPuntaje.Text = Puntos.ToString();
                                 frmJuego.Controls.Remove(Laser);
                                 Colision();
-
-                                frmPerdiste puntos = new frmPerdiste();
-                                puntos.lblPuntajeFinal.Text = Puntos.ToString();
+                                
+                                
 
 
                             }
@@ -246,6 +246,14 @@ namespace pryAguirreNave4
                                 frmPerdiste perder = new frmPerdiste();
                                 perder.Show();
                                 timer1.Stop();
+                                //Puntaje
+                               
+                                perder.lblPuntajeFinal.Text = Puntos.ToString();
+
+                                
+                                
+
+                                objDatos.CargarPuntaje(this.Nombre, Puntos);
                             }
                         }
                     }

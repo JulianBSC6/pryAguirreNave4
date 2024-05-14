@@ -30,5 +30,11 @@ namespace pryAguirreNave4
             frmFirma pasar = new frmFirma();
             pasar.Show();
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            clsBD conexion = new clsBD();
+            conexion.ConectarBDEstado(lblEstadoConexion);
+        }
     }
 }
