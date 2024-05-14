@@ -19,6 +19,7 @@ namespace pryAguirreNave4
         string Nombre;
         private void btnJugar_Click(object sender, EventArgs e)
         {
+            Nombre = txtNombre.Text;
             this.Hide();
             frmJuego pasar = new frmJuego(Nombre);
             pasar.Show();

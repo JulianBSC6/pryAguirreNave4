@@ -13,11 +13,12 @@ namespace pryAguirreNave4
     public partial class frmJuego : Form
     {
         private clsNave Nave;
+        public string NJugador;
         public frmJuego(string NombreJugador)
         {
             InitializeComponent();
-            string NJugador = NombreJugador;
-            Nave = new clsNave(Alien, Alien2, Alien3, pctNave, lblPuntaje, this, timer1, NJugador);
+            NJugador = NombreJugador;
+            Nave = new clsNave(Alien, Alien2, Alien3, pctNave, lblPuntaje, this, timer1);
             
         }
         

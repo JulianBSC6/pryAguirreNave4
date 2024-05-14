@@ -25,7 +25,7 @@ namespace pryAguirreNave4
         
         
 
-        public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, Form frmJuego, Timer timer1, String Name )
+        public clsNave(PictureBox Alien, PictureBox Alien2, PictureBox Alien3, PictureBox pctNave, System.Windows.Forms.Label lblPuntaje, frmJuego frmJuego, Timer timer1 )
         {
             this.Alien = Alien;
             this.Alien2 = Alien2;
@@ -34,7 +34,7 @@ namespace pryAguirreNave4
             this.frmJuego = frmJuego;
             this.timer1 = timer1;
             this.pctNave = pctNave;
-            this.Nombre = Name;
+            this.Nombre = frmJuego.NJugador;
             
             timer1.Interval = 1;
             timer1.Start();
@@ -253,7 +253,7 @@ namespace pryAguirreNave4
                                 
                                 
 
-                                objDatos.CargarPuntaje(this.Nombre, Puntos);
+                                objDatos.CargarPuntaje(Nombre, Puntos);
                             }
                         }
                     }
